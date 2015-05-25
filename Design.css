@@ -56,10 +56,11 @@
 		background-color: #000000;
 	}
 	.background-image {
-  		background-image: url('http://i.imgur.com/K9iJBMu.jpg');
+  		background-image: url('http://i.imgur.com/K9iJBMu.jpg') no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
   		background-size: contain;
-  		background-repeat: no-repeat;
-  		background-position: center center;
   		display: block;
   		filter: blur(2px);
   		-webkit-filter: blur(2px);
