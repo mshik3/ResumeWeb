@@ -5,14 +5,15 @@
     	/*width:1224px; -->*/
     	float:none;
     	padding:20px;
+      padding-right: 20px;
 	}
 	.content2 {
   		font-family: Helvetica Neue, Helvetica, Arial, sans-serif;	
   		text-align: center;
   		text-shadow: 2px 2px #000000;
   		color: white;
- 		top: 18%;
- 		width: 100%;
+ 		  top: 13%;
+ 		  width: 97%;
   		left: 0;
   		position: absolute;
   		margin-top: -100px;
@@ -55,17 +56,12 @@
 	.background{
 		background-color: #000000;
 	}
-	.background-image {
-  		background-image: url('http://i.imgur.com/K9iJBMu.jpg');
-  		background-size: contain;
-  		background-repeat: no-repeat;
-  		background-position: center center;
-  		display: block;
-  		filter: blur(2px);
-  		-webkit-filter: blur(2px);
-  		height: 800px;
-  		top:10%;
-  		z-index: 1;
+	html {
+  		background: url('http://i.imgur.com/3BYEtDp.jpg') no-repeat center center fixed;
+  		-webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
   	}
   	.content {
 /*  		background: rgba(255, 255, 255, 0.35);*/
@@ -75,7 +71,7 @@
   		text-align: center;
   		text-shadow: 2px 2px #000000;
   		color: white;
- 		top: 68%;
+ 		top: 55%;
  		width: 100%;
   		left: 0;
   		position: absolute;
@@ -86,6 +82,25 @@
   		z-index: 2;
   		padding: 0 0px;
 	}
+  .content3 {
+/*      background: rgba(255, 255, 255, 0.35);*/
+    /*  border-radius: 3px;
+      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);*/
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;  
+      text-align: center;
+      text-shadow: 2px 2px #000000;
+      color: white;
+    top: 60%;
+    width: 100%;
+      left: 0;
+      position: absolute;
+      margin-top: -100px;
+/*      margin-left: 20px;
+      margin-right: 20px;*/
+      right: 0;
+      z-index: 2;
+      padding: 0 0px;
+  }
 	#submitbutton {
 		background: rgba(0, 0, 0, 0.35);
   		padding:15px 30px; /*add padding inside of the button*/
