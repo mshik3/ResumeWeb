@@ -25,7 +25,7 @@
 	}
 	#submitbutton {
 		background: rgba(0, 0, 0, 0.60);
-  	padding:15px 30px; /*add padding inside of the button*/
+  	padding:0px 0px; /*add padding inside of the button*/
   	-webkit-box-shadow: 0 0 4px rgba(0,0,0, 1); /* add drop shadows */
   	-moz-box-shadow: 0 0 4px rgba(0,0,0, 1);
   	box-shadow: 0 0 4px rgba(0,0,0, 1);
