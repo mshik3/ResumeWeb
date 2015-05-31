@@ -33,3 +33,6 @@ html {
   z-index: 2;
   padding: 0 0px;
 }
+.navbar {
+    margin-bottom: 0 !important;
+}
