@@ -5,33 +5,32 @@
 	<title>Mustafa Shikora | Home</title>
 	<script type = "text/javascript">
 		var textarray = [ 
-    "Student at University of Illinois at Urbana Champaign", 
-   "Applications Development intern at Calamos Investments", 
-    "Avid Website Designer", 
-    "Tennis Enthusiast", 
-    "Chicago Bulls Fanatic" 
-]; 
+    		"Student at University of Illinois at Urbana Champaign", 
+   			"Applications Development intern at Calamos Investments", 
+    		"Avid Website Designer", 
+    		"Tennis Enthusiast", 
+   			"Chicago Bulls Fanatic" 
+		]; 
 
  
- function RndText()  
- { 
-     var rannum = Math.floor(Math.random() * textarray.length); 
+ 		function RndText()  
+ 		{ 
+     		var rannum = Math.floor(Math.random() * textarray.length); 
  
  
-     $('#random_text').fadeOut('fast', function() {  
-         $(this).text(textarray[rannum]).fadeIn('fast'); 
-     }); 
- } 
+     		$('#random_text').fadeOut('fast', function() {  
+        		$(this).text(textarray[rannum]).fadeIn('fast'); 
+    		}); 
+		} 
  
  
- $(function() { 
-     // Call the random function when the DOM is ready: 
-     RndText();  
- }); 
+ 		$(function() { 
+     		// Call the random function when the DOM is ready: 
+     		RndText();  
+ 		}); 
  
-var inter = setInterval(function() { RndText(); }, 3000); 
-	
-	</script>
+		var inter = setInterval(function() { RndText(); }, 3000); 
+</script>
 </head>
 <body>
 <!-- <div class="logo">
@@ -82,7 +81,7 @@ var inter = setInterval(function() { RndText(); }, 3000);
 </div>
 <div id = "random_text"></div>
 <h1 class = "content">Hello, I'm Mustafa Shikora.</h1>
-
+<div id = "random_text"></div>
 
 <!--  style = "max-width:40%; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; text-align: center; text-shadow: 2px 2px #000000; color: white; top: 60%; left: 30%; position: absolute; margin-top: -100px; right: 25%; z-index: 2; padding: 0 0px;" -->
 
