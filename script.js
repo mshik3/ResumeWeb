@@ -7,20 +7,10 @@ var textarray = [
 ]; 
 
 
-function RndText()  
-{ 
-    var rannum = Math.floor(Math.random() * textarray.length); 
+function RndText() {
+    var rannum= Math.floor(Math.random()*textarray.length);
+    document.getElementById('random_text').innerHTML=textarray[rannum];
+}
 
-
-    $('#random_text').fadeOut('fast', function() {  
-        $(this).text(textarray[rannum]).fadeIn('fast'); 
-    }); 
-} 
-
-
-$(function() { 
-    // Call the random function when the DOM is ready: 
-    RndText();  
-}); 
-
-var inter = setInterval(function() { RndText(); }, 3000); 
+onload = function() { RndText(); }
+var inter = setInterval(function() { RndText(); }, 3000);
