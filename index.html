@@ -9,16 +9,20 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8">
 	<title>Home | Mustafa Shikora</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/scrolling-nav.css" rel="stylesheet">
 </head>
-<body onload = RndText()>
-<!-- <div class="logo">
+<!--<body onload = RndText()>
+<div class="logo">
 	<h3>Mustafa Shikora</h3>
-</div> -->
+</div>
 
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
+<nav class="navbar transparent navbar-inverse">
+  <div class="navbar-inner">
+    
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
@@ -31,24 +35,125 @@
       </a>
     </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
+    
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="Technical">Technical Experience <!-- <span class="sr-only">(current)</span> --></a></li>
+        <li class="active"><a href="Technical">Technical Experience</a></li>
         <li><a href="Education">Education</a></li>
         <li><a href = "Volunteering">Volunteering</a></li>
         <li><a href = "AboutMe">About me</a></li>
       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+    </div>
+  </div>
 </nav>
 <div class = "container">
 	<h1 class = "content">Hello, I'm Mustafa Shikora.</h1>
 	<div id = "random_text" style = "max-width:40%; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; text-align: center; text-shadow: 2px 2px #000000; color: white; top: 60%; left: 30%; position: absolute; margin-top: -100px; right: 25%; z-index: -1; padding: 0 0px;"></div>
 </div>
 
-<!--  style = "max-width:40%; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; text-align: center; text-shadow: 2px 2px #000000; color: white; top: 60%; left: 30%; position: absolute; margin-top: -100px; right: 25%; z-index: 2; padding: 0 0px;" -->
 
+</body>-->
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" onload = RndText()>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">Mustafa Shikora</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a class="page-scroll" href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#education">Education</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#technical">Technical Experience</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#volunteering">Volunteering Service</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact Me</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro Section -->
+    <section id="intro" class="intro-section">
+        <div class="container">
+            
+            <div class="col-lg-12" style = "margin-left: auto; margin-right: auto; width: 100%; padding-top: 12%">
+                <h1 style = "text-shadow: 2px 2px #000000; color: white; font-size: 80px;">Mustafa Shikora</h1>
+                <div id = "random_text" style = "text-shadow: 2px 2px #000000; color: white; font-size: x-large;"></div>
+                <!-- <a class="btn btn-default page-scroll" href="#about">Click Me to Scroll Down!</a> -->
+            </div>
+            
+        </div>
+    </section>
+    <section id="education" class="education-section">
+        <div class="container">
+            <div class="col-lg-12">
+                <h1 style = "text-shadow: 2px 2px #000000; color: white; font-size: x-large;">Education</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="technical" class="technical-section">
+        <div class="container">
+            <div class="col-lg-12">
+                <h1 style = "text-shadow: 2px 2px #000000; color: white; font-size: x-large;">Technical Experience</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="volunteering" class="volunteering-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 style = "text-shadow: 2px 2px #000000; color: white; font-size: x-large;">Volunteering Experience</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 style = "text-shadow: 2px 2px #000000; color: white; font-size: x-large;">Contact Me</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Scrolling Nav JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/scrolling-nav.js"></script>
 
 </body>
 </html>
