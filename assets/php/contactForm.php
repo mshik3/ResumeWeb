@@ -2,7 +2,7 @@
 
 	// Contact
 	$to = 'mshik3@gmail.com';
-    $subject = 'Subject here...';
+    $subject = 'Website comment';
 
 	if(isset($_POST['c_name']) && isset($_POST['c_email']) && isset($_POST['c_message'])){
    		$name    = $_POST['c_name'];
