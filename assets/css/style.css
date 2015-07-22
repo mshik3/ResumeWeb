@@ -440,7 +440,7 @@ h3 > .fa {
 	border: 0;
 	padding: 20px 0;
 	text-transform: uppercase;
-	color: #FFF !important;
+	color: #000 !important;
 }
 
 .navbar-custom .nav li a:hover, 
@@ -448,8 +448,7 @@ h3 > .fa {
 .navbar-custom .nav li.active {
 	background: none;
 	outline: 0;
-	color: #FFFFFF;
-	text-shadow: 1px 1px #000;
+	color: #FF0000;
 }
 
 .navbar-custom .navbar-brand {
