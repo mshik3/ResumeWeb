@@ -529,6 +529,10 @@ h3 > .fa {
 	box-shadow: 0 0 4px rgba(0, 0, 0, .2);
 	padding: 20px 0;
 }
+.col-centered{
+	margin:0 auto;
+	float:none;
+}
 
 .profile-item i {
 	display: block;
