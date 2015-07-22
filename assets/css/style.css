@@ -529,13 +529,15 @@ h3 > .fa {
 	box-shadow: 0 0 4px rgba(0, 0, 0, .2);
 	padding: 20px 0;
 }
+.profile-item{
+	margin:0 auto;
+}
 
 .profile-item i {
 	display: block;
 	line-height: 42px;
 	font-size: 32px;
 	color: #222;
-	margin:0 auto;
 }
 
 .profile-widget {
