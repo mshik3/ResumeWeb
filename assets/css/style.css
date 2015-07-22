@@ -12,7 +12,7 @@
 
 body {
 	font: 300 15px/1.6 'Raleway', serif, sans-serif;
-	color: #FF0000;
+	color: #545454; /*This changes text color*/
 }
 
 img {
@@ -510,7 +510,7 @@ h3 > .fa {
 #intro {
 	padding: 260px 0 160px 0;
 	text-align: center;
-	color: #FFF;
+	color: #000;
 }
 
 #intro h1, #intro h2, #intro h3, #intro h4, #intro h5, #intro h6 {
