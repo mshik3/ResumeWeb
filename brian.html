@@ -30,14 +30,17 @@
   <script>
     function test() {
       letters_ref = firebase.database().ref();
-      var email = prompt("Please input your email", "");
-      var password = prompt("Please input your password", "")
+      letter = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
+      console.log(letter);
       letters_ref.on("value", function(snapshot) {
-         if (email && snapshot.child(email).val() == password) {
-            document.body.style.filter = "blur(0px)"
-         } else{
-           test()
-         }
+        letter_obj = snapshot.child(letter);
+        console.log(letter_obj);
+        var answer = prompt(letter_obj.child("question").val());
+        if (answer && letter_obj.child("answer").val() == answer) {
+          document.body.style.filter = "blur(0px)";
+        } else {
+         test()
+        }
 
       }, function (error) {
       });
