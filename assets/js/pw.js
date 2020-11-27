@@ -1,3 +1,5 @@
+import { dict } from './dict.js'
+
 window.onload = password;
 
 function password() {
@@ -17,9 +19,4 @@ function password() {
 
 function valid(page, pass_input) {
   return dict[page] == pass_input
-}
-
-
-var dict = {
-  'brian.html': 'madeon'
 }

@@ -2,12 +2,57 @@
 
 <html>
 <head>
-  <script type="text/javascript" src="assets/js/pw.js"></script>
+  <!-- <script type="text/javascript" src="assets/js/pw.js"></script> -->
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#available-libraries -->
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyCPcs5Ngfs9XqVogBGZmP8aesni30jcAVk",
+      authDomain: "christmas-retreat-letters.firebaseapp.com",
+      databaseURL: "https://christmas-retreat-letters.firebaseio.com",
+      projectId: "christmas-retreat-letters",
+      storageBucket: "christmas-retreat-letters.appspot.com",
+      messagingSenderId: "828986673641",
+      appId: "1:828986673641:web:d96055914749ae9367a378"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+  <script src="/__/firebase/init.js"></script>
+
+  <script>
+    function test() {
+      letters_ref = firebase.database().ref();
+      var email = prompt("Please input your email", "");
+      var password = prompt("Please input your password", "")
+      letters_ref.on("value", function(snapshot) {
+         if (email && snapshot.child(email).val() == password) {
+            document.body.style.filter = "blur(0px)"
+         } else{
+           test()
+         }
+
+      }, function (error) {
+      });
+    }
+
+    window.onload = test;
+  </script>
 </head>
-<body>
+<body style="filter: blur(10px);">
+
+
 
 <h1>My First Heading</h1>
 <p>My first .</p>
+
 
 </body>
 </html>
