@@ -1,5 +1,4 @@
 module.exports = {
-  pathPrefix: "/ResumeWeb",
   plugins: [
     {
       resolve: "gatsby-theme-portfolio-minimal",
