@@ -1,0 +1,22 @@
+{
+  "intro": "Hello!",
+  "heroPhoto": {
+    "src": "../../images/FullSizeRender.jpg",
+    "alt": "Mustafa Shikora"
+  },
+  "image": {
+    "src": "../../images/waving-hand.png",
+    "alt": "Waving Hand Emoji"
+  },
+  "title": "I'm Mustafa Shikora",
+  "subtitle": {
+    "prefix": "Currently a Software Engineer at ",
+    "highlight": "Discord",
+    "suffix": "."
+  },
+  "description": "I'm a backend engineer with 5+ years of experience always looking to learn more.",
+  "socialProfiles": {
+    "from": ["LinkedIn", "Github", "Mail"],
+    "showIcons": true
+  }
+}
