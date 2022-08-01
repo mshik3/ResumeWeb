@@ -1,0 +1,37 @@
+{
+  "siteMetadata": {
+    "language": "en",
+    "siteUrl": "https://mustafashikora.com",
+    "title": "Mustafa Shikora Resume",
+    "titleTemplate": "%s · Mustafa Shikora",
+    "description": "A resume website for Mustafa Shikora",
+    "author": "Mustafa Shikora",
+    "avatar": "../content/images/favicon.png",
+    "bio": "Mustafa Shikora is an ex-Amazon, ex-Venmo backend engineer growing subscriptions at Discord.",
+    "social": {
+      "github": "https://github.com/mshik3",
+      "linkedin": "https://www.linkedin.com/in/mustafa-shikora-66274090/",
+      "mail": "mailto:mshik3@gmail.com"
+    }
+  },
+  "siteConfiguration": {
+    "logo": { "text": "Mustafa Shikora" },
+    "navigation": {
+      "header": [
+        { "label": "About", "url": "/#about" }
+      ],
+      "ctaButton": {
+        "openNewTab": true,
+        "label": "Resume",
+        "url": "/MustafaShikoraResume.pdf"
+      },
+      "footer": [
+      ]
+    },
+    "featureToggles": {
+      "useDarkModeAsDefault": true,
+      "useDarkModeBasedOnUsersPreference": false,
+      "useCookieBar": false
+    }
+  }
+}
