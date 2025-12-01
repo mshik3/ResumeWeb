@@ -355,27 +355,36 @@ body {
 }
 
 #Resume {
-  height: 90vh; /* Adjust as needed */
-  overflow: auto; /* Add scroll if content exceeds container height */
+  height: 90vh;
+  overflow: auto;
+  padding: 20px;
 }
 
-.resume-table {
-  width: 100%; /* Table width to fill the container */
-  height: 100%; /* Table height to fill the container */
-  border-collapse: collapse; /* Removes space between table cells */
+.resume-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.resume-table td {
-  width: 33.33%; /* Each cell takes up a third of the table width */
-  vertical-align: top; /* Align content to the top of the cell */
+@media (max-width: 900px) {
+  .resume-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .resume-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .resume-card {
-  /* Styles for each card */
-  margin: 10px; /* Adjust as needed */
-  padding: 15px; /* Adjust as needed */
+  padding: 20px;
   text-align: center;
-  /* Add other styles like border, background, etc., as needed */
+  background-color: var(--secondary-bg-color);
+  border-radius: 8px;
 }
 
 .resume-card a {
