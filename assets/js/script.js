@@ -1,43 +1,39 @@
-function openTab(evt, tabName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(tabName).style.display = "block";
+const CAREER_START_DATE = "2017-01-01";
 
-  // Check if event source is not a tab button
-  if (evt.currentTarget.className.includes("tablinks")) {
-    evt.currentTarget.className += " active";
-  } else {
-    // If not, manually set the home tab to active
-    var homeTab = document.querySelector(".tabbar button:first-child");
-    if (tabName === "Home") {
-      homeTab.className += " active";
-    } else {
-      homeTab.className = homeTab.className.replace(" active", "");
-    }
+function openTab(evt, tabName) {
+  const tabContents = document.querySelectorAll(".tabcontent");
+  const tabLinks = document.querySelectorAll(".tablinks");
+  const homeTab = document.querySelector(".tabbar button:first-child");
+  const targetTab = document.getElementById(tabName);
+
+  if (!targetTab) return;
+
+  tabContents.forEach((tab) => (tab.style.display = "none"));
+  tabLinks.forEach((link) => link.classList.remove("active"));
+
+  targetTab.style.display = "block";
+
+  if (evt.currentTarget.classList.contains("tablinks")) {
+    evt.currentTarget.classList.add("active");
+  } else if (tabName === "Home" && homeTab) {
+    homeTab.classList.add("active");
   }
 }
 
 function calculateYearsSince(dateString) {
   const startDate = new Date(dateString);
   const currentDate = new Date();
-  const differenceInYears = currentDate.getFullYear() - startDate.getFullYear();
-  const differenceInMonths = currentDate.getMonth() - startDate.getMonth();
-
-  // Adjust the years if the current date hasn't reached the anniversary in the current year
-  return differenceInYears - (differenceInMonths < 0 ? 1 : 0);
+  const yearDiff = currentDate.getFullYear() - startDate.getFullYear();
+  const monthDiff = currentDate.getMonth() - startDate.getMonth();
+  return yearDiff - (monthDiff < 0 ? 1 : 0);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const years = calculateYearsSince("2017/01/01");
-  document.getElementById("work-experience").textContent = `${years}`;
-});
+  const experienceEl = document.getElementById("work-experience");
+  if (experienceEl) {
+    experienceEl.textContent = calculateYearsSince(CAREER_START_DATE);
+  }
 
-// Get the element with id="defaultOpen" and click on it
-document.getElementsByClassName("tablinks")[0].click();
+  const firstTab = document.querySelector(".tablinks");
+  if (firstTab) firstTab.click();
+});
