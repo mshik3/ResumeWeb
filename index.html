@@ -12,16 +12,17 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
     <title>Mustafa Shikora - Software Engineer</title>
-    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="assets/images/favicon.png" type="image/png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
   </head>
   <body>
     <div class="mobile-view">
       <div class="mobile-image">
-        <img
-          src="assets/images/FullSizeRender.jpg"
-          alt="Mustafa Shikora Headshot"
-        />
+        <picture>
+          <source srcset="assets/images/profile.webp" type="image/webp" />
+          <img src="assets/images/profile.jpg" alt="Mustafa Shikora Headshot" />
+        </picture>
       </div>
       <h2>Mustafa Shikora</h2>
       <p class="subtext">
@@ -82,11 +83,10 @@
     <div id="Home" class="tabcontent">
       <div class="home-content">
         <div class="home-image">
-          <!-- Replace with your image -->
-          <img
-            src="assets/images/FullSizeRender.jpg"
-            alt="Mustafa Shikora Headshot"
-          />
+          <picture>
+            <source srcset="assets/images/profile.webp" type="image/webp" />
+            <img src="assets/images/profile.jpg" alt="Mustafa Shikora Headshot" loading="lazy" />
+          </picture>
         </div>
         <div class="home-text">
           <h1>Mustafa Shikora</h1>
