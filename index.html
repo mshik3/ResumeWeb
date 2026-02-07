@@ -1,456 +1,197 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
-      crossorigin="anonymous"
-    />
-    <title>Mustafa Shikora - Software Engineer</title>
+    <title>Mustafa Shikora - Senior Software Engineer</title>
     <meta
       name="description"
-      content="Mustafa Shikora - Senior Software Engineer at Discord. Previously at Venmo and Amazon Prime Video. Backend, full stack, and Android development."
+      content="Mustafa Shikora — Senior Software Engineer at Discord. Previously at Venmo, Amazon Prime Video, and CME Group. Building scalable backend systems and full-stack applications."
     />
-    <meta property="og:title" content="Mustafa Shikora - Software Engineer" />
+    <link rel="canonical" href="https://mustafashikora.com" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Mustafa Shikora - Senior Software Engineer" />
     <meta
       property="og:description"
-      content="Senior Software Engineer at Discord. Backend, full stack, and Android development."
-    />
-    <meta
-      property="og:image"
-      content="https://mustafashikora.com/assets/images/profile.jpg"
+      content="Senior Software Engineer at Discord. Previously at Venmo, Amazon Prime Video, and CME Group."
     />
     <meta property="og:url" content="https://mustafashikora.com" />
     <meta property="og:type" content="website" />
+
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="assets/images/favicon-32.png"
+    <meta name="twitter:title" content="Mustafa Shikora - Senior Software Engineer" />
+    <meta
+      name="twitter:description"
+      content="Senior Software Engineer at Discord. Building scalable backend systems."
     />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="assets/images/favicon-16.png"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
     />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="assets/images/apple-touch-icon.png"
-    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Mustafa Shikora",
+        "jobTitle": "Senior Software Engineer",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Discord",
+          "url": "https://discord.com"
+        },
+        "url": "https://mustafashikora.com",
+        "sameAs": [
+          "https://github.com/mshik3",
+          "https://www.linkedin.com/in/mustafa-shikora-66274090/"
+        ],
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "University of Illinois at Urbana-Champaign"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Chicago",
+          "addressRegion": "IL",
+          "addressCountry": "US"
+        }
+      }
+    </script>
   </head>
   <body>
-    <div class="mobile-view">
-      <div class="mobile-image">
-        <picture>
-          <source srcset="assets/images/profile.webp" type="image/webp" />
-          <img src="assets/images/profile.jpg" alt="Mustafa Shikora Headshot" />
-        </picture>
-      </div>
-      <h2>Mustafa Shikora</h2>
-      <p class="subtext">
-        <span
-          ><span class="mobile-highlight">Currently</span> - SWE @
-          <span class="mobile-accent">Discord</span></span
-        >
-      </p>
-      <p class="subtext">
-        <span
-          ><span class="mobile-highlight">Previously</span> -
-          <span class="mobile-accent">Venmo</span>,
-          <span class="mobile-accent">Amazon</span></span
-        >
-      </p>
-      <p class="subtext">
-        <span
-          ><span class="mobile-highlight">UIUC</span> '16
-          <span class="mobile-accent">Math + CS</span></span
-        >
-      </p>
-      <span class="work-status">
-        <i class="fas fa-circle" style="color: red"></i> Not looking for work
-      </span>
-      <a href="mailto:mshik3@gmail.com" class="email-link">
-        <span class="mobile-accent"><i class="fas fa-envelope"></i></span>
-      </a>
-      <a
-        href="assets/Resume/MustafaShikoraResume.pdf"
-        class="download-resume"
-        download
-      >
-        Download Resume
-      </a>
-    </div>
-    <div class="navbar">
-      <button onclick="openTab(event, 'Home')" class="name-button">
-        Mustafa Shikora
-      </button>
-      <div class="tab-container">
-        <div class="tabbar">
-          <button class="tablinks" onclick="openTab(event, 'Home')">
-            <i class="fas fa-home"></i> home.txt
-          </button>
-          <button class="tablinks" onclick="openTab(event, 'About')">
-            <i class="fas fa-user"></i> about.md
-          </button>
-          <button class="tablinks" onclick="openTab(event, 'Resume')">
-            <i class="fas fa-briefcase"></i> resume.py
-          </button>
-        </div>
-        <a href="mailto:mshik3@gmail.com" class="contact-me">
-          <i class="fas fa-envelope"></i>contact.me
-        </a>
-      </div>
-    </div>
-
-    <div id="Home" class="tabcontent">
-      <div class="home-content">
-        <div class="home-image">
-          <picture>
-            <source srcset="assets/images/profile.webp" type="image/webp" />
-            <img
-              src="assets/images/profile.jpg"
-              alt="Mustafa Shikora Headshot"
-              loading="lazy"
-            />
-          </picture>
-        </div>
-        <div class="home-text">
-          <h1>Mustafa Shikora</h1>
-          <h2>Software Developer</h2>
-          <h3>Backend, Full Stack, Android, whatever</h3>
-          <p>
-            I'm a senior level engineer who's been building highly available,
-            highly scalable, efficient, and robust infrastructures.
-          </p>
-          <p>
-            An expert in backend with proficiency in frontend and Android
-            Development, I have <span id="work-experience">7</span> years of
-            experience in software engineering from
-            <span class="logo">
-              <img
-                src="assets/images/Amazon_Prime_Video_logo.svg"
-                alt="Prime Video Logo"
-              /> </span
-            >,
-            <span class="logo">
-              <img src="assets/images/venmo.svg" alt="Venmo Logo" /> </span
-            >, and now
-            <span class="logo">
-              <img
-                src="assets/images/discord-logo-blue.svg"
-                alt="Discord Logo"
-              /> </span
-            >.
+    <a href="#experience" class="skip-link">skip to content</a>
+    <main class="split">
+      <!-- Left Panel — Hero -->
+      <section class="panel-left" aria-label="introduction">
+        <div class="hero">
+          <p class="hero-greeting">Hi, my name is</p>
+          <h1 class="hero-name">Mustafa Shikora</h1>
+          <h2 class="hero-subtitle">Senior Software Engineer at Discord</h2>
+          <p class="hero-description">
+            I build things that scale to millions and try not to break them
           </p>
 
-          <p>
-            <!-- Location Icon -->
-            <i class="fas fa-map-marker-alt"></i> Chicago, IL
-            <!-- Work Status Icon and Text -->
-            <span class="work-status"
-              ><i class="fas fa-circle" style="color: red"></i> Not looking for
-              work</span
-            >
-            <a
-              href="assets/Resume/MustafaShikoraResume.pdf"
-              class="download-resume"
-              download
-            >
-              <i class="fas fa-file-download"></i> Download Resume
+          <div class="hero-links">
+            <a href="https://github.com/mshik3" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
             </a>
-          </p>
-        </div>
-      </div>
-    </div>
+            <a href="https://www.linkedin.com/in/mustafa-shikora-66274090/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="mailto:mshik3@gmail.com" class="social-icon" aria-label="Email">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </a>
+            <a href="assets/Resume/MustafaShikoraResume.pdf" class="resume-btn" download>resume</a>
+          </div>
 
-    <div id="About" class="tabcontent">
-      <div id="professional-interests" class="about-section">
-        <h2>##### Professional Interests #####</h2>
-        <div class="interests-container">
-          <div class="interest-cell">
-            <h3>Android Development</h3>
-            <p>
-              Been picking up many Android projects at Discord and having fun.
-              Google Play Billing has become my frenemy. Always searching for
-              ways to improve Discord's Android Billing infrastructure.
-            </p>
-          </div>
-          <div class="interest-cell">
-            <h3>Entrepreneurship</h3>
-            <p>
-              After recently shutting down my venture called
-              <a href="https://capless.ai" target="_blank">Capless</a>, I'm
-              marinating an idea for a new app hopefully coming soon &#128064;
-            </p>
-          </div>
-          <div class="interest-cell">
-            <h3>Mentorship</h3>
-            <p>
-              I've been mentoring a sophomore at Purdue since he was 14 and he's
-              an incredible engineer so far.
-              <a
-                href="https://www.linkedin.com/in/karthikrajarukonda/"
-                target="_blank"
-                >Reach out to him</a
-              >
-              if you want a Software Engineering intern who'll work better than
-              your employees.
-            </p>
+          <div class="work-status">
+            <span class="status-dot"></span>
+            Not looking for work
           </div>
         </div>
-      </div>
+      </section>
 
-      <div id="personal-interests" class="about-section">
-        <h2>##### Personal Interests #####</h2>
-        <div class="interests-container">
-          <div class="interest-cell">
-            <h3>Music</h3>
-            <iframe
-              style="border-radius: 12px"
-              src="https://open.spotify.com/embed/playlist/65UivoWLrNnll4meelwiAx?utm_source=generator"
-              width="100%"
-              height="152"
-              frameborder="0"
-              allowfullscreen=""
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy"
-            ></iframe>
-          </div>
+      <!-- Right Panel — Scrollable -->
+      <section class="panel-right" aria-label="experience and education">
+        <div class="scroll-hint" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+        <div class="panel-scroll">
+          <!-- Experience -->
+          <div class="section" id="experience">
+            <h2 class="section-heading"><span class="section-number">01.</span> Experience</h2>
 
-          <div class="interest-cell">
-            <h3>Sports</h3>
-            <div class="sports-list">
-              <ul>
-                <li>Basketball</li>
-                <li>Tennis</li>
-                <li>Golf</li>
-              </ul>
-              <ul>
-                <li>Volleyball (Beach)</li>
-                <li>Volleyball (Regular)</li>
-                <li>Broomball</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="interest-cell">
-            <h3>Video Games</h3>
-            <div class="split-cell">
-              <div>
-                <h4>Currently Playing</h4>
-                <ul>
-                  <li>Skyrim Special Edition</li>
-                  <li>Diablo 4</li>
-                  <li>Spiderman 2</li>
-                </ul>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-date">May 2022 — Present</div>
+                <div class="timeline-content">
+                  <h3>Senior Software Engineer, Tech Lead <span class="at-company">@ <a href="https://discord.com" target="_blank" rel="noopener noreferrer">Discord</a></span></h3>
+                  <ul>
+                    <li>Built the revenue infrastructure powering Discord's subscriptions platform for millions of users</li>
+                    <li>Uncovered a critical billing fraud vulnerability, preventing $10M+ in potential revenue loss</li>
+                    <li>Shipped Collectibles platform across Android and iOS, generating $2M+ annually</li>
+                  </ul>
+                </div>
               </div>
-              <div>
-                <h4>Most Loved</h4>
-                <ul>
-                  <li>Baldurs Gate 3</li>
-                  <li>God of War: Ragnorak</li>
-                  <li>Pokemon Fire Red</li>
-                </ul>
+
+              <div class="timeline-item">
+                <div class="timeline-date">May 2020 — May 2022</div>
+                <div class="timeline-content">
+                  <h3>Co-founder &amp; CTO <span class="at-company">@ <a href="https://capless.ai" target="_blank" rel="noopener noreferrer">Capless</a></span></h3>
+                  <ul>
+                    <li>Built an algorithm to match founders with investors, joined P10X Accelerator</li>
+                    <li>Interviewed as a top 500 company with Y Combinator</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-date">Mar 2020 — Apr 2022</div>
+                <div class="timeline-content">
+                  <h3>Senior Software Engineer <span class="at-company">@ <a href="https://venmo.com" target="_blank" rel="noopener noreferrer">Venmo</a></span></h3>
+                  <ul>
+                    <li>Backend lead for Credit Card referrals and helped launch the Venmo Credit Card</li>
+                    <li>Launched Cash-a-Check for stimulus checks, built circuit breaker for PayPal call failures</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-date">Mar 2017 — Nov 2019</div>
+                <div class="timeline-content">
+                  <h3>Software Development Engineer <span class="at-company">@ <a href="https://primevideo.com" target="_blank" rel="noopener noreferrer">Amazon Prime Video</a></span></h3>
+                  <ul>
+                    <li>Built scalable catalog applications vending data to millions of Prime Video devices</li>
+                    <li>Designed and implemented language preference services for the Amazon Video platform</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-date">May 2016 — Dec 2016</div>
+                <div class="timeline-content">
+                  <h3>Software Engineering Intern <span class="at-company">@ <a href="https://www.cmegroup.com/" target="_blank" rel="noopener noreferrer">CME Group</a></span></h3>
+                  <ul>
+                    <li>Front-end development and authentication work for cmegroup.com</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="interest-cell">
-            <h3>Reading</h3>
-            <div class="split-cell">
-              <div>
-                <h4>Currently Reading</h4>
-                <ul>
-                  <li>A Little Life</li>
-                  <li>The Three Body Problem</li>
-                </ul>
-              </div>
-              <div>
-                <h4>Most Loved</h4>
-                <ul>
-                  <li>The Martian</li>
-                  <li>Ender's Game</li>
-                  <li>Ready Player One</li>
-                  <li>Song of Achilles</li>
-                </ul>
+          <!-- Education -->
+          <div class="section" id="education">
+            <h2 class="section-heading"><span class="section-number">02.</span> Education</h2>
+
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-date">Aug 2013 — Dec 2016</div>
+                <div class="timeline-content">
+                  <h3>University of Illinois at Urbana-Champaign</h3>
+                  <p class="education-detail">Bachelor's, Applied Mathematics · Computer Science Minor</p>
+                </div>
               </div>
             </div>
           </div>
-
-          <div class="interest-cell">
-            <h3>Screen Picks</h3>
-            <p>
-              <a href="https://www.imdb.com/title/tt9362722/" target="_blank"
-                >Movie - Across the Spiderverse</a
-              >
-            </p>
-            <p>
-              <a href="https://www.imdb.com/title/tt3581920/" target="_blank"
-                >TV Show - The Last of Us</a
-              >
-            </p>
-            <p>
-              <a
-                href="https://www.youtube.com/user/onemeeeliondollars"
-                target="_blank"
-                >Youtuber - Mark Rober</a
-              >
-            </p>
-            <p>
-              <a href="https://www.youtube.com/@ludwig" target="_blank"
-                >Livestreamer - Ludwig</a
-              >
-            </p>
-            <p>
-              <a href="https://www.vlr.gg/" target="_blank"
-                >ESport - Valorant</a
-              >
-            </p>
-          </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
 
-    <div id="Resume" class="tabcontent">
-      <div class="resume-grid">
-        <article class="resume-card">
-          <a href="https://discord.com" target="_blank">
-            <img
-              src="assets/images/discord-mark-blue.png"
-              alt="Discord Logo"
-              class="company-logo"
-            />
-          </a>
-          <h3>Discord</h3>
-          <span class="dates">05/2022 - Present</span>
-          <p>Software Engineer</p>
-          <ul class="role-details">
-            <li>Working in the Subscriptions Team</li>
-            <li>Developing the revenue infrastructure</li>
-            <li>Collaborating with product teams to launch new features</li>
-            <li>Full stack work covering backend, client, and mobile</li>
-          </ul>
-        </article>
-        <article class="resume-card">
-          <a href="https://capless.ai" target="_blank">
-            <img
-              src="assets/images/capless.png"
-              alt="Capless Logo"
-              class="company-logo"
-            />
-          </a>
-          <h3>Capless</h3>
-          <span class="dates">05/2020 - 05/2022</span>
-          <p>Cofounder and Chief Technology Officer</p>
-          <ul class="role-details">
-            <li>Built algorithm to match founders and investors</li>
-            <li>Designed website and marketing designs</li>
-            <li>Iterated and pivoted the product repeatedly</li>
-            <li>
-              Joined
-              <a href="https://product10x.com/" target="_blank"
-                >P10X Accelerator</a
-              >
-              as a portfolio company
-            </li>
-            <li>
-              Interviewed as a top 500 company with
-              <a href="https://www.ycombinator.com/" target="_blank"
-                >Y Combinator</a
-              >
-            </li>
-          </ul>
-        </article>
-        <article class="resume-card">
-          <a href="https://venmo.com" target="_blank">
-            <img
-              src="assets/images/Venmo_App_Icon.webp"
-              alt="Venmo Logo"
-              class="company-logo"
-            />
-          </a>
-          <h3>Venmo</h3>
-          <span class="dates">03/2020 - 04/2022</span>
-          <p>Senior Software Engineer</p>
-          <ul class="role-details">
-            <li>Subject Matter Expert on AWS</li>
-            <li>Tech lead for many Credit Card projects</li>
-            <li>Launched Cash-A-Check for stimulus checks</li>
-            <li>
-              Built a circuit breaker to stop external calls when error rates
-              spike
-            </li>
-          </ul>
-        </article>
-        <article class="resume-card">
-          <a href="https://primevideo.com" target="_blank">
-            <img
-              src="assets/images/Amazon_Prime_Video_logo.svg"
-              alt="Amazon Prime Video Logo"
-              class="company-logo"
-            />
-          </a>
-          <h3>Amazon Prime Video</h3>
-          <span class="dates">03/2017 - 11/2019</span>
-          <p>Senior Software Engineer</p>
-          <ul class="role-details">
-            <li>Developed scalable Prime Video catalog applications.</li>
-            <li>Maintained data pipelines for third-party exports.</li>
-            <li>Initiated global transactional media content launch.</li>
-            <li>Implemented customer-preferred language selection services.</li>
-          </ul>
-        </article>
-        <article class="resume-card">
-          <a href="https://illinois.edu/" target="_blank">
-            <img
-              src="assets/images/illinois.png"
-              alt="Illinois Logo"
-              class="company-logo"
-            />
-          </a>
-          <h3>University of Illinois - Urbana Champaign</h3>
-          <span class="dates">08/2013 - 12/2016</span>
-          <p>Mathematics Major and Computer Science Minor</p>
-          <ul class="role-details">
-            <li>Specialized in Applied Mathematics</li>
-            <li>Studied core CS topics</li>
-            <li>Vice President in Alpha Phi Omega</li>
-            <li>100+ hours of volunteering and service</li>
-          </ul>
-        </article>
-        <article class="resume-card">
-          <a href="https://www.cmegroup.com/" target="_blank">
-            <img
-              src="assets/images/CMEgroup.png"
-              alt="CME Group Logo"
-              class="company-logo"
-            />
-          </a>
-          <h3>CME Group</h3>
-          <span class="dates">05/2016 - 12/2016</span>
-          <p>Software Engineering Intern</p>
-          <ul class="role-details">
-            <li>Focusing on front-end development.</li>
-            <li>Worked on authentication and security for cmegroup.com.</li>
-            <li>Gained expertise in AngularJS, Java, and financial markets.</li>
-            <li>Participated in trading challenges and financial workshops.</li>
-          </ul>
-        </article>
-      </div>
-    </div>
-
-    <script src="assets/js/script.js"></script>
   </body>
 </html>
