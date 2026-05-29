@@ -239,6 +239,46 @@
         margin-bottom: 0;
       }
 
+      /* mix-your-own + "more" notes */
+      .mixer {
+        text-align: center;
+        margin-top: 0.22in;
+      }
+      .mixer .tag {
+        display: inline-block;
+        font-family: "Fredoka", sans-serif;
+        font-weight: 600;
+        font-size: 10px;
+        letter-spacing: 0.18em;
+        text-indent: 0.18em;
+        color: var(--ink);
+        background: var(--sunny);
+        padding: 3px 12px;
+        border-radius: 999px;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+      .mixer .list {
+        font-family: "Fredoka", sans-serif;
+        font-weight: 500;
+        font-size: 14.5px;
+        color: var(--ink);
+        letter-spacing: 0.01em;
+      }
+      .mixer .ask {
+        font-style: italic;
+        font-size: 14px;
+        color: var(--ink-soft);
+        margin-top: 3px;
+      }
+      .more {
+        text-align: center;
+        font-style: italic;
+        font-size: 14px;
+        color: var(--ink-soft);
+        margin-top: 0.16in;
+      }
+
       /* ---------- Footer ---------- */
       footer {
         margin-top: 0.34in;
@@ -306,28 +346,13 @@
             </p>
           </div>
 
-          <div class="item">
-            <p class="item-name">Dirty Shirley</p>
-            <p class="item-desc">vodka, grenadine &amp; sprite</p>
-          </div>
-
-          <div class="cols">
-            <div class="item">
-              <p class="item-name">Vodka Pineapple</p>
-              <p class="item-desc">vodka &amp; pineapple juice</p>
-            </div>
-            <div class="item">
-              <p class="item-name">Tequila Pineapple</p>
-              <p class="item-desc">tequila &amp; pineapple juice</p>
-            </div>
-            <div class="item">
-              <p class="item-name">Vodka Soda</p>
-              <p class="item-desc">vodka &amp; club soda</p>
-            </div>
-            <div class="item">
-              <p class="item-name">Fireball &amp; Sprite</p>
-              <p class="item-desc">cinnamon whiskey &amp; sprite</p>
-            </div>
+          <div class="mixer">
+            <span class="tag">Mix Your Own</span>
+            <p class="list">
+              vodka · tequila · fireball · pineapple juice · sprite · club soda
+              · grenadine
+            </p>
+            <p class="ask">tell the bar what you're feeling &amp; we'll shake one up</p>
           </div>
         </section>
 
@@ -336,30 +361,15 @@
           <div class="section-head"><h2>Beer &amp; Seltzer</h2></div>
           <div class="cols">
             <div class="item">
-              <p class="item-name">Modelo</p>
-              <p class="item-desc">crisp mexican lager</p>
-            </div>
-            <div class="item">
-              <p class="item-name">Pacifico</p>
-              <p class="item-desc">light mexican pilsner</p>
-            </div>
-            <div class="item">
-              <p class="item-name">Peroni</p>
-              <p class="item-desc">italian pilsner</p>
-            </div>
-            <div class="item">
-              <p class="item-name">Miller Lite</p>
-              <p class="item-desc">american light lager</p>
-            </div>
-            <div class="item">
-              <p class="item-name">Summer Shandy</p>
-              <p class="item-desc">leinenkugel's lemon shandy</p>
-            </div>
-            <div class="item">
               <p class="item-name">High Noon</p>
               <p class="item-desc">peach · lemon · kiwi · raspberry</p>
             </div>
+            <div class="item">
+              <p class="item-name">Modelo</p>
+              <p class="item-desc">crisp mexican lager</p>
+            </div>
           </div>
+          <p class="more">+ a few more cold beers in the fridge — just ask</p>
         </section>
 
         <!-- SNACKS -->
