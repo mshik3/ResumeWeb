@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Hour @ Chestnut</title>
+    <link rel="stylesheet" href="fonts.css" />
+    <style>
+      :root {
+        --paper: #fff6e0;
+        --paper-warm: #ffeec2;
+        --ink: #4a2f1b;
+        --ink-soft: #97704a;
+        --tangerine: #f2632a;
+        --tangerine-deep: #d94c18;
+        --sunny: #ffc23d;
+        --coral: #ff8a5b;
+        --leaf: #4ba85a;
+        --page-w: 8.5in;
+        --page-h: 11in;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        background: #ffd98a;
+        color: var(--ink);
+        font-family: "Fraunces", Georgia, serif;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        padding: 32px 16px;
+      }
+
+      .page {
+        position: relative;
+        width: var(--page-w);
+        min-height: var(--page-h);
+        padding: 0.7in 0.8in 0.55in;
+        background: radial-gradient(
+          130% 70% at 50% -8%,
+          #fffaf0 0%,
+          var(--paper) 45%,
+          var(--paper-warm) 100%
+        );
+        border-radius: 22px;
+        box-shadow: 0 24px 60px rgba(180, 110, 30, 0.32);
+        overflow: hidden;
+      }
+
+      /* playful dashed inner border */
+      .frame {
+        position: absolute;
+        inset: 0.3in;
+        border: 3px dashed var(--tangerine);
+        border-radius: 14px;
+        pointer-events: none;
+        opacity: 0.85;
+      }
+
+      /* sunbursts */
+      .sun {
+        position: absolute;
+        border-radius: 50%;
+        pointer-events: none;
+        opacity: 0.55;
+        background: radial-gradient(circle, var(--sunny) 36%, transparent 37%),
+          repeating-conic-gradient(
+            var(--sunny) 0deg 7deg,
+            transparent 7deg 18deg
+          );
+      }
+      .sun.tr {
+        top: -110px;
+        right: -110px;
+        width: 270px;
+        height: 270px;
+      }
+      .sun.bl {
+        bottom: -130px;
+        left: -120px;
+        width: 240px;
+        height: 240px;
+        opacity: 0.4;
+      }
+
+      .content {
+        position: relative;
+        z-index: 2;
+      }
+
+      /* ---------- Header ---------- */
+      header {
+        text-align: center;
+        margin-bottom: 0.3in;
+      }
+
+      .kicker {
+        font-family: "Fredoka", sans-serif;
+        font-weight: 600;
+        font-size: 12px;
+        letter-spacing: 0.28em;
+        text-indent: 0.28em;
+        color: var(--leaf);
+        text-transform: uppercase;
+      }
+
+      h1 {
+        font-family: "Caprasimo", cursive;
+        font-size: 54px;
+        line-height: 1.04;
+        color: var(--tangerine);
+        margin: 6px 0 18px;
+        text-shadow: 3px 3px 0 var(--sunny);
+        transform: rotate(-1.5deg);
+      }
+      h1 .at {
+        display: inline-block;
+        color: var(--leaf);
+        text-shadow: 3px 3px 0 rgba(75, 168, 90, 0.25);
+        transform: rotate(4deg);
+        font-size: 44px;
+      }
+
+      .tagline {
+        font-family: "Fredoka", sans-serif;
+        font-weight: 500;
+        font-size: 15px;
+        letter-spacing: 0.04em;
+        color: var(--ink-soft);
+        margin-top: 2px;
+      }
+
+      /* ---------- Section ---------- */
+      .section {
+        margin-bottom: 0.3in;
+      }
+      .section:last-child {
+        margin-bottom: 0;
+      }
+
+      .section-head {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: 0.2in;
+      }
+      .section-head::before,
+      .section-head::after {
+        content: "";
+        flex: 0 0 64px;
+        height: 0;
+        border-top: 3px dotted var(--coral);
+      }
+      .section-head h2 {
+        font-family: "Fredoka", sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        letter-spacing: 0.06em;
+        color: #fff;
+        background: var(--tangerine);
+        padding: 5px 18px;
+        border-radius: 999px;
+        text-transform: uppercase;
+        white-space: nowrap;
+        box-shadow: 2px 2px 0 var(--sunny);
+      }
+      .section:nth-of-type(2) .section-head h2 {
+        background: var(--leaf);
+        box-shadow: 2px 2px 0 #bfe6b6;
+      }
+      .section:nth-of-type(3) .section-head h2 {
+        background: var(--coral);
+        box-shadow: 2px 2px 0 var(--sunny);
+      }
+
+      /* ---------- Items ---------- */
+      .item {
+        margin-bottom: 0.18in;
+        text-align: center;
+      }
+      .item:last-child {
+        margin-bottom: 0;
+      }
+
+      .item-name {
+        font-family: "Fredoka", sans-serif;
+        font-weight: 600;
+        font-size: 17px;
+        letter-spacing: 0.01em;
+        color: var(--ink);
+      }
+      .item-desc {
+        font-style: italic;
+        font-size: 14.5px;
+        line-height: 1.35;
+        color: var(--ink-soft);
+        margin-top: 1px;
+      }
+
+      /* featured house pour */
+      .featured .tag {
+        display: inline-block;
+        font-family: "Fredoka", sans-serif;
+        font-weight: 600;
+        font-size: 10px;
+        letter-spacing: 0.18em;
+        text-indent: 0.18em;
+        color: #fff;
+        background: var(--sunny);
+        color: var(--ink);
+        padding: 3px 12px;
+        border-radius: 999px;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+      }
+      .featured .item-name {
+        font-size: 24px;
+        color: var(--tangerine-deep);
+      }
+
+      /* two-column block */
+      .cols {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 0.5in;
+        row-gap: 0.18in;
+      }
+      .cols .item {
+        margin-bottom: 0;
+      }
+
+      /* ---------- Footer ---------- */
+      footer {
+        margin-top: 0.34in;
+        text-align: center;
+      }
+      .footer-mark {
+        font-size: 18px;
+        letter-spacing: 0.18em;
+      }
+      .footer-note {
+        font-family: "Fredoka", sans-serif;
+        font-weight: 500;
+        font-size: 13px;
+        color: var(--tangerine-deep);
+        margin-top: 6px;
+      }
+
+      /* ---------- Print ---------- */
+      @page {
+        size: letter portrait;
+        margin: 0;
+      }
+      @media print {
+        html,
+        body {
+          background: var(--paper);
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+        body {
+          display: block;
+          padding: 0;
+        }
+        .page {
+          width: 100%;
+          min-height: 100vh;
+          border-radius: 0;
+          box-shadow: none;
+          page-break-after: avoid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <div class="sun tr"></div>
+      <div class="sun bl"></div>
+      <div class="frame"></div>
+      <div class="content">
+        <header>
+          <p class="kicker">Sun · Snacks · Spritz</p>
+          <h1>Happy Hour <span class="at">@</span> Chestnut</h1>
+          <p class="tagline">grab a drink, grab a snack, stay a while ☀</p>
+        </header>
+
+        <!-- COCKTAILS -->
+        <section class="section">
+          <div class="section-head"><h2>Cocktails</h2></div>
+
+          <div class="item featured">
+            <span class="tag">House Pour</span>
+            <p class="item-name">Hugo Spritz</p>
+            <p class="item-desc">
+              prosecco, elderflower, club soda, fresh mint &amp; lime
+            </p>
+          </div>
+
+          <div class="item">
+            <p class="item-name">Dirty Shirley</p>
+            <p class="item-desc">vodka, grenadine &amp; sprite</p>
+          </div>
+
+          <div class="cols">
+            <div class="item">
+              <p class="item-name">Vodka Pineapple</p>
+              <p class="item-desc">vodka &amp; pineapple juice</p>
+            </div>
+            <div class="item">
+              <p class="item-name">Tequila Pineapple</p>
+              <p class="item-desc">tequila &amp; pineapple juice</p>
+            </div>
+            <div class="item">
+              <p class="item-name">Vodka Soda</p>
+              <p class="item-desc">vodka &amp; club soda</p>
+            </div>
+            <div class="item">
+              <p class="item-name">Fireball &amp; Sprite</p>
+              <p class="item-desc">cinnamon whiskey &amp; sprite</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- BEER & SELTZER -->
+        <section class="section">
+          <div class="section-head"><h2>Beer &amp; Seltzer</h2></div>
+          <div class="cols">
+            <div class="item">
+              <p class="item-name">Modelo</p>
+              <p class="item-desc">crisp mexican lager</p>
+            </div>
+            <div class="item">
+              <p class="item-name">Pacifico</p>
+              <p class="item-desc">light mexican pilsner</p>
+            </div>
+            <div class="item">
+              <p class="item-name">Peroni</p>
+              <p class="item-desc">italian pilsner</p>
+            </div>
+            <div class="item">
+              <p class="item-name">Miller Lite</p>
+              <p class="item-desc">american light lager</p>
+            </div>
+            <div class="item">
+              <p class="item-name">Summer Shandy</p>
+              <p class="item-desc">leinenkugel's lemon shandy</p>
+            </div>
+            <div class="item">
+              <p class="item-name">High Noon</p>
+              <p class="item-desc">peach · lemon · kiwi · raspberry</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- SNACKS -->
+        <section class="section">
+          <div class="section-head"><h2>Snacks</h2></div>
+
+          <div class="item">
+            <p class="item-name">Grape Jelly Meatballs</p>
+            <p class="item-desc">sweet, savory &amp; slow-simmered</p>
+          </div>
+
+          <div class="item">
+            <p class="item-name">Loaded Nachos</p>
+            <p class="item-desc">vegetarian, piled high with all the fixings</p>
+          </div>
+
+          <div class="item">
+            <p class="item-name">Chips, Salsa &amp; Guac</p>
+            <p class="item-desc">house guacamole with mild &amp; spicy salsa</p>
+          </div>
+        </section>
+
+        <footer>
+          <p class="footer-mark">🍋 * 🥭</p>
+        </footer>
+      </div>
+    </main>
+  </body>
+</html>
