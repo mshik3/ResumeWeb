@@ -1,0 +1,84 @@
+cv:
+  name: Mustafa Shikora
+  email: mshik3@gmail.com
+  website: https://mustafashikora.com
+  social_networks:
+    - network: LinkedIn
+      username: mustafa-shikora-66274090
+    - network: GitHub
+      username: mshik3
+  sections:
+    Experience:
+      - company: Discord
+        position: Senior Software Engineer, Tech Lead
+        location: Remote
+        start_date: 2024-04
+        end_date: present
+        summary: Tech lead for the subscriptions platform team and point of contact for mobile revenue platform projects.
+        highlights:
+          - Led the regional storefront project from design to full rollout, working with product, design, marketing, and data science; every user now has one set country that decides their catalog, currency, and prices. Built a dark launch to test it first, which other teams now reuse
+          - "Led engineering response to a major App Store fraud incident: found the exploit, patched it in 2 days, and revoked the fraudulent subscriptions; also saved tens of thousands of subscriptions with Apple billing retry handling"
+          - Tech lead for moving mobile purchases to a server-side order system; added pricing in two new local currencies so a retail gift card launch shipped on time, and led a legally required currency change in one country by its deadline
+          - Trusted subject matter expert for App Store and Google Play billing, consulted by other teams on design and launches; set technical direction after a multi-day Android purchase outage by writing the RFC and moving app store price syncing to a self-healing design
+          - Mentored 3 engineers who each took ownership of a major area (app store billing, regional pricing and mobile orders, console partner integrations)
+      - company: Discord
+        position: Software Engineer
+        location: Remote
+        start_date: 2022-05
+        end_date: 2024-04
+        highlights:
+          - Reduced involuntary churn by extending the mobile subscription grace period (about 40% on iOS, roughly half on Google Play)
+          - Led the first targeted discount launch, which became the base of the discounts platform; later built an API so another team could launch discounts without billing changes
+          - "Led reliability for Google Play subscriptions: fixed tens of thousands of stuck subscriptions and added a recurring cleanup job"
+          - Led the Android launch of the digital collectibles shop and built iOS subscription support for a creator monetization product
+          - Cut main API logging costs by about half, recovered tens of thousands of failed renewals using existing gift credit, and halved engineer time on support tickets
+      - company: Venmo
+        position: Senior Software Engineer
+        location: Chicago, IL
+        start_date: 2020-03
+        end_date: 2022-04
+        highlights:
+          - Backend lead for Credit Card Referrals program, processing thousands of referrals
+          - Feature lead for an automated process to reissue expiring debit cards for users, currently processing 300k+ debit cards per month
+          - Launched Cash-a-Check for direct deposit stimulus checks on Venmo
+          - Helped launch Venmo Credit Card; built repayments, autopay, and operational dashboards
+          - Fixed and improved Venmo CircuitBreaker to PayPal, strengthening HTTP call failure handling
+          - Subject Matter Expert for AWS on my team, consistently consult for new projects in the space
+      - company: Amazon
+        position: Software Development Engineer
+        location: Seattle, WA
+        start_date: 2017-03
+        end_date: 2019-11
+        highlights:
+          - Research, design, and implement highly scalable and available applications for vending catalog data to the supported devices for Prime Video
+          - Built and maintained data pipelines to export Prime Video data to third party clients
+          - Helping create a new process to recommend UX Language for the Amazon Video platform
+          - Researching, designing, and implementing 2 services with multiple APIs to select the preferred language for a customer and a device
+    Skills:
+      - label: Languages
+        details: Python, Java, Kotlin, Swift, TypeScript
+      - label: Frameworks and Tools
+        details: Flask, SQLAlchemy, React.js, React Native, iOS, Git, Datadog, Sentry
+      - label: Infrastructure and Data
+        details: Postgres, BigQuery, Pub/Sub, Terraform, Google Cloud Platform, AWS
+    Education:
+      - institution: University of Illinois Urbana-Champaign
+        area: Applied Mathematics
+        degree: Bachelor's
+        start_date: 2013-08
+        end_date: 2016-12
+design:
+  theme: engineeringresumes
+  page:
+    show_top_note: false
+    top_margin: 0.4in
+    bottom_margin: 0.4in
+    left_margin: 0.5in
+    right_margin: 0.5in
+  typography:
+    line_spacing: 0.45em
+    font_size:
+      body: 10pt
+  sections:
+    space_between_regular_entries: 0.25cm
+    space_between_text_based_entries: 0.1cm
