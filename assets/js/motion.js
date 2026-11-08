@@ -75,6 +75,10 @@ function cards(n) {
   } })();
 }
 
+// Address is assembled in the browser so it never appears in the HTML that scrapers read
+const address = ['gmail.com', 'mshik3'].reverse().join('@');
+document.querySelectorAll('a.mail').forEach(a => { a.href = 'mailto:' + address; });
+
 document.querySelectorAll('.chart').forEach(n => { io.observe(n); chart(n); });
 document.querySelectorAll('.live-ttt').forEach(n => { io.observe(n); ttt(n); });
 document.querySelectorAll('.live-cards').forEach(n => { io.observe(n); cards(n); });
