@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>A trading bot that runs itself · Mustafa Shikora</title>
+    <meta name="description" content="Five academic trading strategies, a Sharpe-weighted allocator, and wash-sale tracking on Cloudflare Workers. Paper results vs the S&amp;P 500, how it's built, and everything that broke." />
+    <link rel="canonical" href="https://mustafashikora.com/trading/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://mustafashikora.com/trading/" />
+    <meta property="og:title" content="A trading bot that runs itself" />
+    <meta property="og:description" content="Five strategies from papers, one allocator, paper results vs the S&amp;P 500, and everything that broke." />
+    <meta property="og:image" content="https://mustafashikora.com/assets/images/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg" />
+    <link rel="preload" href="/assets/fonts/Fraunces-400-600.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  </head>
+  <body>
+    <div class="wrap narrow">
+      <header class="site-header">
+        <a href="/" class="home">Mustafa Shikora</a>
+        <nav aria-label="Primary">
+          <a href="/#projects">Projects</a>
+          <a href="/#work">Work</a>
+        </nav>
+      </header>
+
+      <main class="article">
+        <h1>A trading bot that runs itself</h1>
+        <p class="dek">
+          Five strategies from papers, one allocator deciding who gets the money, and a lot of bugs I didn't know
+          trading could have. Paper money for now.
+        </p>
+
+        <svg class="chart" viewBox="0 0 640 200" role="img" aria-label="Paper portfolio vs S&amp;P 500, March to November 2026">
+          <line class="base" x1="0" x2="640" y1="136.2" y2="136.2" />
+          <path class="spy" d="M6.0,136.2 L10.1,131.0 L14.2,135.1 L18.3,144.8 L22.4,138.4 L26.5,139.6 L30.6,140.5 L34.7,151.6 L38.8,155.7 L42.9,148.4 L47.0,146.5 L51.2,158.4 L55.3,161.2 L59.4,163.6 L63.5,159.7 L67.6,172.4 L71.7,172.4 L75.8,186.6 L79.9,166.7 L84.0,161.4 L88.1,160.7 L92.2,157.4 L96.3,157.1 L100.4,138.8 L104.5,134.6 L108.6,127.9 L112.7,118.8 L116.8,112.9 L120.9,111.0 L125.0,103.3 L129.1,108.4 L133.2,100.6 L137.3,103.6 L141.5,96.3 L145.6,100.1 L149.7,100.2 L153.8,92.5 L157.9,93.2 L162.0,87.0 L166.1,76.1 L170.2,78.5 L174.3,70.1 L178.4,71.3 L182.5,66.9 L186.6,60.5 L190.7,70.8 L194.8,76.2 L198.9,68.0 L203.0,66.4 L207.1,57.9 L211.2,58.0 L215.3,53.5 L219.4,49.2 L223.5,48.1 L227.6,53.9 L231.8,50.8 L235.9,70.2 L240.0,72.6 L244.1,85.2 L248.2,71.8 L252.3,53.3 L256.4,58.2 L260.5,68.3 L264.6,60.0 L268.7,62.5 L272.8,74.3 L276.9,74.7 L281.0,73.5 L285.1,66.2 L289.2,59.9 L293.3,61.0 L297.4,62.1 L301.5,55.0 L305.6,61.4 L309.7,54.6 L313.8,57.3 L317.9,54.4 L322.1,51.2 L326.2,55.6 L330.3,65.0 L334.4,58.3 L338.5,59.2 L342.6,69.3 L346.7,68.3 L350.8,66.4 L354.9,78.8 L359.0,65.5 L363.1,48.1 L367.2,33.2 L371.3,34.9 L375.4,36.2 L379.5,31.4 L383.6,34.0 L387.7,31.9 L391.8,26.1 L395.9,31.7 L400.0,37.4 L404.1,35.7 L408.2,42.7 L412.4,39.3 L416.5,41.8 L420.6,39.1 L424.7,38.9 L428.8,33.5 L432.9,35.4 L437.0,37.9 L441.1,43.6 L445.2,39.9 L449.3,31.2 L453.4,34.4 L457.5,39.0 L461.6,42.9 L465.7,47.9 L469.8,40.9 L473.9,44.6 L478.0,48.4 L482.1,52.0 L486.2,42.7 L490.3,41.6 L494.4,28.8 L498.5,28.9 L502.7,35.0 L506.8,35.6 L510.9,31.1 L515.0,37.4 L519.1,38.9 L523.2,40.6 L527.3,39.1 L531.4,33.0 L535.5,27.3 L539.6,22.7 L543.7,24.7 L547.8,28.3 L551.9,23.2 L556.0,23.7 L560.1,23.8 L564.2,33.0 L568.3,30.6 L572.4,39.9 L576.5,36.4 L580.6,33.6 L584.7,29.2 L588.8,39.2 L593.0,43.5 L597.1,37.6 L601.2,32.9 L605.3,30.0 L609.4,33.3 L613.5,48.1 L617.6,52.1 L621.7,49.6 L625.8,36.0 L629.9,72.9 L634.0,70.4" />
+          <path class="bot" d="M6.0,136.2 L10.1,135.6 L14.2,136.4 L18.3,135.8 L22.4,136.4 L26.5,135.6 L30.6,136.7 L34.7,137.2 L38.8,137.6 L42.9,136.4 L47.0,136.3 L51.2,141.9 L55.3,142.6 L59.4,144.6 L63.5,140.3 L67.6,143.0 L71.7,143.5 L75.8,145.1 L79.9,138.0 L84.0,134.9 L88.1,135.2 L92.2,136.0 L96.3,133.9 L100.4,130.1 L104.5,129.2 L108.6,129.0 L112.7,126.0 L116.8,124.8 L120.9,125.0 L125.0,124.0 L129.1,125.0 L133.2,118.8 L137.3,120.9 L141.5,120.8 L145.6,126.1 L149.7,126.4 L153.8,124.1 L157.9,114.6 L162.0,111.5 L166.1,109.1 L170.2,111.9 L174.3,103.0 L178.4,102.7 L182.5,102.1 L186.6,102.4 L190.7,114.7 L194.8,120.8 L198.9,114.1 L203.0,115.2 L207.1,115.9 L211.2,121.7 L215.3,125.1 L219.4,124.5 L223.5,127.7 L227.6,131.6 L231.8,129.3 L235.9,136.0 L240.0,140.6 L244.1,141.0 L248.2,142.5 L252.3,125.0 L256.4,127.6 L260.5,130.4 L264.6,136.5 L268.7,134.9 L272.8,140.0 L276.9,143.0 L281.0,148.0 L285.1,148.6 L289.2,144.1 L293.3,142.0 L297.4,136.0 L301.5,132.4 L305.6,137.9 L309.7,131.0 L313.8,129.2 L317.9,116.3 L322.1,104.6 L326.2,109.1 L330.3,113.8 L334.4,99.4 L338.5,103.0 L342.6,109.5 L346.7,108.3 L350.8,116.0 L354.9,113.8 L359.0,108.6 L363.1,114.3 L367.2,110.6 L371.3,107.6 L375.4,103.0 L379.5,103.6 L383.6,107.9 L387.7,107.8 L391.8,105.0 L395.9,105.2 L400.0,101.3 L404.1,105.9 L408.2,45.2 L412.4,20.6 L416.5,18.7 L420.6,22.2 L424.7,24.9 L428.8,18.3 L432.9,19.9 L437.0,25.3 L441.1,25.7 L445.2,29.1 L449.3,22.0 L453.4,22.5 L457.5,22.4 L461.6,24.1 L465.7,27.9 L469.8,25.3 L473.9,30.5 L478.0,44.2 L482.1,43.7 L486.2,35.3 L490.3,29.6 L494.4,13.6 L498.5,13.4 L502.7,22.6 L506.8,23.3 L510.9,26.2 L515.0,29.0 L519.1,27.0 L523.2,27.4 L527.3,28.0 L531.4,27.2 L535.5,26.8 L539.6,26.8 L543.7,28.6 L547.8,27.9 L551.9,28.5 L556.0,28.3 L560.1,28.5 L564.2,29.6 L568.3,31.1 L572.4,30.7 L576.5,31.0 L580.6,30.6 L584.7,30.7 L588.8,34.3 L593.0,34.2 L597.1,36.5 L601.2,36.3 L605.3,35.7 L609.4,34.6 L613.5,40.2 L617.6,40.0 L621.7,40.7 L625.8,39.3 L629.9,40.5 L634.0,47.4" />
+        </svg>
+        <div class="legend"><span><i></i>bot</span><span><i class="b"></i>S&amp;P 500</span><span>Mar 3 to Nov 6, 2026</span></div>
+        <dl class="stats">
+          <div><dt>return</dt><dd>+12.1% <small>S&amp;P +8.9%</small></dd></div>
+          <div><dt>worst drawdown</dt><dd>6.0% <small>S&amp;P 7.5%</small></dd></div>
+          <div><dt>daily runs</dt><dd>158</dd></div>
+        </dl>
+        <p class="note">Paper account on Alpaca, started at $100,000. Eight months is not a track record and none of this is advice.</p>
+
+        <h2>The strategies</h2>
+        <table>
+          <thead><tr><th>Strategy</th><th>Idea</th><th>Weight now</th></tr></thead>
+          <tbody>
+            <tr><td>Keller DAA</td><td>Two "canary" assets (emerging markets and bonds) decide how defensive to be. Keller &amp; Keuning, 2018.</td><td>30%</td></tr>
+            <tr><td>Faber GTAA</td><td>Hold each asset class only while it's above its 10-month average. Faber, 2006.</td><td>29%</td></tr>
+            <tr><td>Crypto trend</td><td>Hold BTC and ETH above their 20-day average, sized by volatility. Moskowitz, Ooi &amp; Pedersen, 2012.</td><td>19%</td></tr>
+            <tr><td>Dual Momentum</td><td>Hold the strongest US equity ETF on 12-month momentum, or short-term Treasuries if nothing beats cash. Antonacci.</td><td>12%</td></tr>
+            <tr><td>Connors RSI-2</td><td>Buy sharp dips in ETFs that are still in an uptrend, sell the bounce. Connors &amp; Alvarez, 2008.</td><td>10%</td></tr>
+          </tbody>
+        </table>
+        <p>
+          They were picked to disagree with each other: monthly trend, daily mean reversion, and crypto barely
+          correlate. A meta-allocator sits on top. Once a strategy has 60 days of history, money shifts toward the
+          ones with better rolling Sharpe, and any sleeve that drifts more than 20% off its target gets trimmed back.
+        </p>
+
+        <h2>Guardrails</h2>
+        <ul>
+          <li>Checks it's pointed at the paper account before every single trade.</li>
+          <li>Down 10%: no new trades. Down 15%: cancel everything and go to cash.</li>
+          <li>Tracks tax lots and skips any buy that would trigger a wash sale. Sells long-term lots first.</li>
+          <li>Reconciles its own books against the broker every run and parks anything it can't explain.</li>
+          <li>Posts every run to a Discord channel, so I find out about problems before the P&amp;L does.</li>
+        </ul>
+
+        <h2>How it's built</h2>
+        <p>
+          A Cloudflare Worker on a weekday cron at 9:45 ET, with D1 holding positions, tax lots, orders, signals, and
+          daily snapshots. It's built spec-first: write a spec, turn it into a plan, implement against
+          tests. The repo has 197 tests and production invariant checks that fail loudly when the books don't add up.
+        </p>
+
+        <h2>Everything that broke</h2>
+        <p>The commit log is the honest part.</p>
+        <ul class="log">
+          <li><time>Mar 13</time><span>First version. Tests for the first nine bugs, including two strategies fighting over the same position.</span></li>
+          <li><time>Mar 20</time><span>Gave each strategy its own cash so they stop spending each other's money. Mark-to-market P&amp;L per strategy.</span></li>
+          <li><time>May 3</time><span>The bot wrote BTC/USD, the broker said BTCUSD. Same coin, two spellings, and positions quietly went missing. Symbols now get normalized on the way into the database.</span></li>
+          <li><time>May 18</time><span>Daily reconciliation against the broker, and positions update from actual fills instead of from what I asked for.</span></li>
+          <li><time>Jul 8</time><span>Strategies were bleeding into each other's positions, drawdown was feeding back into itself, and signals were on the wrong timezone.</span></li>
+          <li><time>Aug 20</time><span>Crypto cost basis was valued wrong. Added invariant checks so the next accounting bug can't hide.</span></li>
+          <li><time>Sep 3</time><span>Friday runs had never fired. Cloudflare numbers weekdays starting with Sunday as 1, so my "1-5" ran Sunday to Thursday for six months. Also: drawdown is now measured against real capital.</span></li>
+          <li><time>Sep 28</time><span>The crypto strategy couldn't see its own positions, so it bought again every day and never sold. Also found a test mock that was swallowing failed sells.</span></li>
+        </ul>
+
+        <h2>Next</h2>
+        <p>
+          A contrarian overlay that uses market fear (VIX) to size positions: hold back when everyone's calm, lean in
+          when everyone's panicking. It's planned, not built.
+        </p>
+      </main>
+
+      <footer class="site-footer">
+        <a href="/">Home</a>
+        <a href="mailto:mshik3@gmail.com">mshik3@gmail.com</a>
+        <a href="https://github.com/mshik3">GitHub</a>
+      </footer>
+    </div>
+  </body>
+</html>

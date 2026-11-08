@@ -17,7 +17,7 @@ cv:
         summary: Tech lead for the subscriptions platform team and point of contact for mobile revenue platform projects.
         highlights:
           - Led the regional storefront project from design to full rollout, working with product, design, marketing, and data science; every user now has one set country that decides their catalog, currency, and prices. Built a dark launch to test it first, which other teams now reuse
-          - "Led engineering response to a major App Store fraud incident: found the exploit, patched it in 2 days, and revoked the fraudulent subscriptions; also saved tens of thousands of subscriptions with Apple billing retry handling"
+          - "Led engineering response to a major App Store incident: found the root cause and shipped the fix in 2 days; also saved tens of thousands of subscriptions with Apple billing retry handling"
           - Tech lead for moving mobile purchases to a server-side order system; added pricing in two new local currencies so a retail gift card launch shipped on time, and led a legally required currency change in one country by its deadline
           - Trusted subject matter expert for App Store and Google Play billing, consulted by other teams on design and launches; set technical direction after a multi-day Android purchase outage by writing the RFC and moving app store price syncing to a self-healing design
           - Mentored 3 engineers who each took ownership of a major area (app store billing, regional pricing and mobile orders, console partner integrations)
